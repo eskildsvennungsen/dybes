@@ -1,4 +1,8 @@
 import './globals.css'
+import { optimizeFonts } from '@/next.config'
+
+import Navbar from './components/NavbarComponent'
+import Footer from './components/FooterComponent'
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +12,12 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      
+      <body className='bg-white'>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
